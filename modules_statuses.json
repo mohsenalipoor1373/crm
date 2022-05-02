@@ -1,0 +1,10 @@
+{
+    "Users": true,
+    "Roles": true,
+    "Permissions": true,
+    "Grouping": true,
+    "Blog": true,
+    "Masterbach": true,
+    "Colors": true,
+    "Color": true
+}

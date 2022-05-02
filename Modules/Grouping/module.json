@@ -1,0 +1,13 @@
+{
+    "name": "Grouping",
+    "alias": "grouping",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Grouping\\Providers\\GroupingServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
