@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fa">
 @include('partials.css')
-<body class="hold-transition skin-blue sidebar-mini" style="font-family: Shabnam"
-onload="myLoader()" >
+<body class="hold-transition skin-blue sidebar-mini" style="font-family: Shabnam">
+<div class="loader"></div>
 
 <div class="wrapper">
 
@@ -11,7 +11,6 @@ onload="myLoader()" >
     @include('partials.aside')
 
     <div class="content-wrapper">
-        <div class="loader"></div>
         <section class="content-header">
             <h1>
                 <small></small>
@@ -29,12 +28,6 @@ onload="myLoader()" >
 
             </div>
         </section>
-
-
-
-
-
-
 
 
     </div>

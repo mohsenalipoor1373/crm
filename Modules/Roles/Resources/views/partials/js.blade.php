@@ -115,6 +115,55 @@
             });
         });
 
+        $('body').on('click', '.btn_add_permission_roles', function (e) {
+            $('.btn_add_permission_roles').prop('disabled', true);
+            var loadingText = 'در حال بررسی اطلاعات... <i class="fa fa-spinner fa-spin"></i>';
+            $('.btn_add_permission_roles').html(loadingText);
+            e.preventDefault(e);
+            $.ajax({
+                url: "{{route('post_data_permission_role')}}",
+                data: $('#form_add_permission_roles').serialize(),
+                type: 'POST',
+                success: function (data) {
+                    if (data.status == 1) {
+                        tata.success('موفق', data.success, {
+                            position: 'bl',
+                            duration: 8000,
+                            animate: 'slide'
+                        });
+                        $('.btn_add_permission_roles').prop('disabled', false);
+                        var loadingText = 'ثبت';
+                        $('.btn_add_permission_roles').html(loadingText);
+                    } else {
+                        var msg;
+                        if (data.errors.permission) {
+                            msg = data.errors.permission;
+                        }
+                        tata.error('خطا', msg, {
+                            position: 'bl',
+                            duration: 8000,
+                            animate: 'slide'
+                        });
+                        $('.btn_add_permission_roles').prop('disabled', false);
+                        var loadingText = 'ثبت';
+                        $('.btn_add_permission_roles').html(loadingText);
+                    }
+
+                },
+                error: function (request, status, error) {
+                    tata.error('خطا', 'در سیستم خطایی رخ داده است لطفا دوباره سعی کنید', {
+                        position: 'bl',
+                        duration: 8000,
+                        animate: 'slide'
+                    });
+                    $('.btn_add_permission_roles').prop('disabled', false);
+                    var loadingText = 'ثبت';
+                    $('.btn_add_permission_roles').html(loadingText);
+                }
+            });
+        });
+
+
         $('body').on('click', '.btn_edit_roles', function (e) {
             $('.btn_edit_roles').prop('disabled', true);
             var loadingText = 'در حال بررسی اطلاعات... <i class="fa fa-spinner fa-spin"></i>';

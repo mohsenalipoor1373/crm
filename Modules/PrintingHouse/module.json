@@ -1,0 +1,13 @@
+{
+    "name": "PrintingHouse",
+    "alias": "printinghouse",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\PrintingHouse\\Providers\\PrintingHouseServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

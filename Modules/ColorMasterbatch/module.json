@@ -1,0 +1,13 @@
+{
+    "name": "ColorMasterbatch",
+    "alias": "colormasterbatch",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\ColorMasterbatch\\Providers\\ColorMasterbatchServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

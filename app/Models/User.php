@@ -7,10 +7,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Modules\Grouping\Entities\Grouping;
+use Spatie\Permission\Models\Role;
 use Spatie\Permission\Traits\HasRoles;
 
 /**
  * @method static orderBy(string $string, string $string1)
+ * @method static create(array $array)
+ * @method static findOrfail(mixed $id)
+ * @method static findById(mixed $id)
  */
 class User extends Authenticatable
 {
@@ -41,4 +46,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class,'role_id');
+    }
+    public function grouping()
+    {
+        return $this->belongsTo(Grouping::class,'grouping_id');
+    }
+
 }

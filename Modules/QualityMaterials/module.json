@@ -1,0 +1,13 @@
+{
+    "name": "QualityMaterials",
+    "alias": "qualitymaterials",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\QualityMaterials\\Providers\\QualityMaterialsServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

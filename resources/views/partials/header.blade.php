@@ -34,29 +34,16 @@
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="{{asset('assets/dist/img/User_Icon.png')}}" class="user-image" alt="User Image">
-                        <span class="hidden-xs">مدیریت</span>
+                        <span class="hidden-xs">{{auth()->user()->name}} {{auth()->user()->fname}}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <li class="user-header">
                             <img src="{{asset('assets/dist/img/User_Icon.png')}}" class="img-circle" alt="User Image">
 
                             <p>
-                                مدیریت
-                                <small>مدیریت کل سایت</small>
+                                {{auth()->user()->name}} {{auth()->user()->fname}}
+                                <small>{{auth()->user()->role->name}}</small>
                             </p>
-                        </li>
-                        <li class="user-body">
-                            <div class="row">
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">صفحه من</a>
-                                </div>
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">فروش</a>
-                                </div>
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">دوستان</a>
-                                </div>
-                            </div>
                         </li>
                         <li class="user-footer">
                             <div class="pull-right">

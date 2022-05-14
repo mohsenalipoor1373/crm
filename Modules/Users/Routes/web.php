@@ -18,4 +18,7 @@ Route::middleware('auth')->prefix('users')->group(function () {
     Route::get('edit_users', [\Modules\Users\Http\Controllers\UsersController::class, 'edit_users'])->name('edit_users');
     Route::get('ban_users', [\Modules\Users\Http\Controllers\UsersController::class, 'ban_users'])->name('ban_users');
     Route::get('remove_users', [\Modules\Users\Http\Controllers\UsersController::class, 'remove_users'])->name('remove_users');
+    Route::get('add_permission_to_users/{id?}', [\Modules\Users\Http\Controllers\UsersController::class, 'add_permission_to_users'])->name('add_permission_to_users');
+    Route::post('post_data_permission_user', [\Modules\Users\Http\Controllers\UsersController::class, 'post_data_permission_user'])->name('post_data_permission_user');
+
 });

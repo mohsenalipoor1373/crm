@@ -1,0 +1,13 @@
+{
+    "name": "EarlyMaterials",
+    "alias": "earlymaterials",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\EarlyMaterials\\Providers\\EarlyMaterialsServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

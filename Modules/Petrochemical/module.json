@@ -1,0 +1,13 @@
+{
+    "name": "Petrochemical",
+    "alias": "petrochemical",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Petrochemical\\Providers\\PetrochemicalServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

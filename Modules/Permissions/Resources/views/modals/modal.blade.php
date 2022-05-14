@@ -22,6 +22,12 @@
                                     <input type="text" class="form-control"
                                            id="name" name="name" placeholder="عنوان دسترسی">
                                 </div>
+                                <div class="form-group">
+                                    <label for="username">لیبل</label>
+                                    <input type="text" class="form-control"
+                                           id="label" name="label" placeholder="لیبل">
+                                </div>
+
                             </div>
                         </form>
                     </div>
@@ -73,6 +79,12 @@
                                     <input type="text" class="form-control"
                                            id="edit_name" name="edit_name" placeholder="عنوان دسترسی">
                                 </div>
+                                <div class="form-group">
+                                    <label for="edit_label">لیبل</label>
+                                    <input type="text" class="form-control"
+                                           id="edit_label" name="edit_label" placeholder="لیبل">
+                                </div>
+
                             </div>
                         </form>
                     </div>

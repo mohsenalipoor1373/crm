@@ -1,9 +1,10 @@
-@extends('grouping::layouts.master')
-
+@extends('layouts.main')
 @section('content')
-    <h1>Hello World</h1>
-
-    <p>
-        This view is loaded from module: {!! config('grouping.name') !!}
-    </p>
+    <div id="TableData">
+        {!! $output !!}
+    </div>
+    @include('grouping::modals.modal')
+@endsection
+@section('script')
+    @include('grouping::partials.js')
 @endsection

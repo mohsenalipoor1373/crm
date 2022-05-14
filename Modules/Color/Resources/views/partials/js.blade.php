@@ -60,48 +60,46 @@
 
         });
 
-        $('body').on('click', '.add_masterbach', function () {
-            $('#add-masterbach').modal('show');
+        $('body').on('click', '.add_color', function () {
+            $('#add-color').modal('show');
         });
 
-        $('body').on('click', '.btn_add_masterbach', function (e) {
-            $('.btn_add_masterbach').prop('disabled', true);
+        $('body').on('click', '.btn_add_color', function (e) {
+            $('.btn_add_color').prop('disabled', true);
             var loadingText = 'در حال بررسی اطلاعات... <i class="fa fa-spinner fa-spin"></i>';
-            $('.btn_add_masterbach').html(loadingText);
+            $('.btn_add_color').html(loadingText);
             e.preventDefault(e);
             $.ajax({
                 url: "{{route('post_data_color')}}",
-                data: $('#form_add_masterbach').serialize(),
+                data: $('#form_add_color').serialize(),
                 type: 'POST',
                 success: function (data) {
                     if (data.status == 1) {
                         load_table();
-                        $('#form_add_masterbach').trigger("reset");
-                        $('#add-masterbach').modal('hide');
+                        $('#form_add_color').trigger("reset");
+                        $('#add-color').modal('hide');
                         tata.success('موفق', data.success, {
                             position: 'bl',
                             duration: 8000,
                             animate: 'slide'
                         });
-                        $('.btn_add_masterbach').prop('disabled', false);
+                        $('.btn_add_color').prop('disabled', false);
                         var loadingText = 'ثبت';
-                        $('.btn_add_masterbach').html(loadingText);
+                        $('.btn_add_color').html(loadingText);
                     } else {
                         var msg;
                         if (data.errors.name) {
                             msg = data.errors.name;
                         }
-                        if (data.errors.code) {
-                            msg = data.errors.code;
-                        }
+
                         tata.error('خطا', msg, {
                             position: 'bl',
                             duration: 8000,
                             animate: 'slide'
                         });
-                        $('.btn_add_masterbach').prop('disabled', false);
+                        $('.btn_add_color').prop('disabled', false);
                         var loadingText = 'ثبت';
-                        $('.btn_add_masterbach').html(loadingText);
+                        $('.btn_add_color').html(loadingText);
                     }
 
                 },
@@ -111,35 +109,35 @@
                         duration: 8000,
                         animate: 'slide'
                     });
-                    $('.btn_add_masterbach').prop('disabled', false);
+                    $('.btn_add_color').prop('disabled', false);
                     var loadingText = 'ثبت';
-                    $('.btn_add_masterbach').html(loadingText);
+                    $('.btn_add_color').html(loadingText);
                 }
             });
         });
 
-        $('body').on('click', '.btn_edit_masterbach', function (e) {
-            $('.btn_edit_masterbach').prop('disabled', true);
+        $('body').on('click', '.btn_edit_color', function (e) {
+            $('.btn_edit_color').prop('disabled', true);
             var loadingText = 'در حال بررسی اطلاعات... <i class="fa fa-spinner fa-spin"></i>';
-            $('.btn_edit_masterbach').html(loadingText);
+            $('.btn_edit_color').html(loadingText);
             e.preventDefault(e);
             $.ajax({
                 url: "{{route('post_data_edit_color')}}",
-                data: $('#form_edit_masterbach').serialize(),
+                data: $('#form_edit_color').serialize(),
                 type: 'POST',
                 success: function (data) {
                     if (data.status == 1) {
                         load_table();
-                        $('#form_edit_masterbach').trigger("reset");
-                        $('#edit-masterbach').modal('hide');
+                        $('#form_edit_color').trigger("reset");
+                        $('#edit-color').modal('hide');
                         tata.success('موفق', data.success, {
                             position: 'bl',
                             duration: 8000,
                             animate: 'slide'
                         });
-                        $('.btn_edit_masterbach').prop('disabled', false);
+                        $('.btn_edit_color').prop('disabled', false);
                         var loadingText = 'ثبت';
-                        $('.btn_edit_masterbach').html(loadingText);
+                        $('.btn_edit_color').html(loadingText);
                     } else {
                         var msg;
                         if (data.errors.edit_name) {
@@ -150,9 +148,9 @@
                             duration: 8000,
                             animate: 'slide'
                         });
-                        $('.btn_edit_masterbach').prop('disabled', false);
+                        $('.btn_edit_color').prop('disabled', false);
                         var loadingText = 'ثبت';
-                        $('.btn_edit_masterbach').html(loadingText);
+                        $('.btn_edit_color').html(loadingText);
                     }
 
                 },
@@ -162,16 +160,16 @@
                         duration: 8000,
                         animate: 'slide'
                     });
-                    $('.btn_edit_masterbach').prop('disabled', false);
+                    $('.btn_edit_color').prop('disabled', false);
                     var loadingText = 'ثبت';
-                    $('.btn_edit_masterbach').html(loadingText);
+                    $('.btn_edit_color').html(loadingText);
                 }
             });
         });
 
-        $('body').on('click', '.edit_masterbach', function () {
+        $('body').on('click', '.edit_color', function () {
             $('#load_modal').show();
-            $('#edit-masterbach').modal('show');
+            $('#edit-color').modal('show');
             var id = $(this).data('id');
             $.ajax({
                 url: "{{route('edit_color')}}",
@@ -179,7 +177,6 @@
                 type: 'GET',
                 success: function (data) {
                     $('#edit_name').val(data.name);
-                    $('#edit_code').val(data.code);
                     $('#id').val(data.id);
                     $('#load_modal').fadeOut();
                     $('#ajaxSpinnerDemo').addClass('d-none')
@@ -190,21 +187,21 @@
                         duration: 8000,
                         animate: 'slide'
                     });
-                    $('.btn_add_masterbach').prop('disabled', false);
+                    $('.btn_add_color').prop('disabled', false);
                     var loadingText = 'ثبت';
-                    $('.btn_add_masterbach').html(loadingText);
-                    $('#edit-masterbach').modal('hide');
+                    $('.btn_add_color').html(loadingText);
+                    $('#edit-color').modal('hide');
                     $('#load_modal').fadeOut();
 
                 }
             });
         });
 
-        $('body').on('click', '.remove_masterbach', function () {
+        $('body').on('click', '.remove_color', function () {
             var id = $(this).data('id');
             Swal.fire({
                 title: 'اخطار!',
-                text: "آیا از حذف مستربچ اطمینان دارید؟",
+                text: "آیا از حذف رنگ اطمینان دارید؟",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',

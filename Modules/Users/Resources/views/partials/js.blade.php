@@ -69,10 +69,17 @@
             var loadingText = 'در حال بررسی اطلاعات... <i class="fa fa-spinner fa-spin"></i>';
             $('.btn_add_users').html(loadingText);
             e.preventDefault(e);
+            var form = $('#form_add_users')[0];
+            var data = new FormData(form);
             $.ajax({
                 url: "{{route('post_data_user')}}",
-                data: $('#form_add_users').serialize(),
+                data: data,
                 type: 'POST',
+                enctype: 'multipart/form-data',
+                cache: false,
+                contentType: false,
+                processData: false,
+                method: 'POST',
                 success: function (data) {
                     if (data.status == 1) {
                         load_table();
@@ -94,10 +101,14 @@
                             msg = data.errors.fname;
                         } else if (data.errors.lname) {
                             msg = data.errors.lname;
-                        } else if (data.errors.side) {
-                            msg = data.errors.side;
+                        } else if (data.errors.role_id) {
+                            msg = data.errors.role_id;
                         } else if (data.errors.pass) {
                             msg = data.errors.pass;
+                        } else if (data.errors.grouping_id) {
+                            msg = data.errors.grouping_id;
+                        } else if (data.errors.shift_id) {
+                            msg = data.errors.shift_id;
                         }
                         tata.error('خطا', msg, {
                             position: 'bl',
@@ -128,10 +139,17 @@
             var loadingText = 'در حال بررسی اطلاعات... <i class="fa fa-spinner fa-spin"></i>';
             $('.btn_edit_users').html(loadingText);
             e.preventDefault(e);
+            var form = $('#form_edit_users')[0];
+            var data = new FormData(form);
             $.ajax({
                 url: "{{route('post_data_edit_user')}}",
-                data: $('#form_edit_users').serialize(),
+                data: data,
                 type: 'POST',
+                enctype: 'multipart/form-data',
+                cache: false,
+                contentType: false,
+                processData: false,
+                method: 'POST',
                 success: function (data) {
                     if (data.status == 2) {
                         tata.error('خطا', 'نام کاربری قبلا در سیستم ثبت شده است', {
@@ -163,8 +181,14 @@
                             msg = data.errors.edit_fname;
                         } else if (data.errors.edit_lname) {
                             msg = data.errors.edit_lname;
-                        } else if (data.errors.edit_side) {
-                            msg = data.errors.edit_side;
+                        } else if (data.errors.edit_role_id) {
+                            msg = data.errors.edit_role_id;
+                        } else if (data.errors.edit_pass) {
+                            msg = data.errors.edit_pass;
+                        } else if (data.errors.edit_grouping_id) {
+                            msg = data.errors.edit_grouping_id;
+                        } else if (data.errors.edit_shift_id) {
+                            msg = data.errors.edit_shift_id;
                         }
                         tata.error('خطا', msg, {
                             position: 'bl',
@@ -190,7 +214,60 @@
             });
         });
 
+        $('body').on('click', '.btn_add_permission_users', function (e) {
+            $('.btn_add_permission_users').prop('disabled', true);
+            var loadingText = 'در حال بررسی اطلاعات... <i class="fa fa-spinner fa-spin"></i>';
+            $('.btn_add_permission_users').html(loadingText);
+            e.preventDefault(e);
+            $.ajax({
+                url: "{{route('post_data_permission_user')}}",
+                data: $('#form_add_permission_users').serialize(),
+                type: 'POST',
+                success: function (data) {
+                    if (data.status == 1) {
+                        tata.success('موفق', data.success, {
+                            position: 'bl',
+                            duration: 8000,
+                            animate: 'slide'
+                        });
+                        $('.btn_add_permission_users').prop('disabled', false);
+                        var loadingText = 'ثبت';
+                        $('.btn_add_permission_users').html(loadingText);
+                    } else {
+                        var msg;
+                        if (data.errors.permission) {
+                            msg = data.errors.permission;
+                        }
+                        tata.error('خطا', msg, {
+                            position: 'bl',
+                            duration: 8000,
+                            animate: 'slide'
+                        });
+                        $('.btn_add_permission_users').prop('disabled', false);
+                        var loadingText = 'ثبت';
+                        $('.btn_add_permission_users').html(loadingText);
+                    }
+
+                },
+                error: function (request, status, error) {
+                    tata.error('خطا', 'در سیستم خطایی رخ داده است لطفا دوباره سعی کنید', {
+                        position: 'bl',
+                        duration: 8000,
+                        animate: 'slide'
+                    });
+                    $('.btn_add_permission_roles').prop('disabled', false);
+                    var loadingText = 'ثبت';
+                    $('.btn_add_permission_roles').html(loadingText);
+                }
+            });
+        });
+
+
+
         $('body').on('click', '.edit_users', function () {
+            $('#edit_shift_id').empty();
+            $('#edit_grouping_id').empty();
+            $('#edit_role_id').empty();
             $('#load_modal').show();
             $('#edit-users').modal('show');
             var id = $(this).data('id');
@@ -199,12 +276,33 @@
                 data: {id},
                 type: 'GET',
                 success: function (data) {
-                    $('#edit_email').val(data.email);
-                    $('#edit_side').val(data.side);
-                    $('#edit_lname').val(data.name);
-                    $('#edit_fname').val(data.fname);
-                    $('#edit_pass').val(data.password);
-                    $('#id').val(data.id);
+
+                    for (i = 0; i < data.roles.length; i++) {
+                        $('#edit_role_id').append(
+                            "<option value='" + data.roles[i].id + "'>" + data.roles[i].name + "</option>"
+                        );
+                    }
+
+                    for (i = 0; i < data.groupings.length; i++) {
+                        $('#edit_grouping_id').append(
+                            "<option value='" + data.groupings[i].id + "'>" + data.groupings[i].name + "</option>"
+                        );
+                    }
+
+                    for (i = 0; i < data.shifts.length; i++) {
+                        $('#edit_shift_id').append(
+                            "<option value='" + data.shifts[i].id + "'>" + data.shifts[i].name + "</option>"
+                        );
+                    }
+
+                    $('#edit_role_id').val(data.users.role_id);
+                    $('#edit_grouping_id').val(data.users.grouping_id);
+                    $('#edit_shift_id').val(data.users.shift_id);
+                    $('#edit_email').val(data.users.email);
+                    $('#edit_lname').val(data.users.name);
+                    $('#edit_fname').val(data.users.fname);
+                    $('#edit_pass').val(data.users.password);
+                    $('#id').val(data.users.id);
 
                     $('#load_modal').fadeOut();
                     $('#ajaxSpinnerDemo').addClass('d-none')
@@ -310,5 +408,58 @@
 
     });
 
+
+</script>
+<script>
+    $('.role_id').select2({
+        dropdownParent: $('#add-users'),
+        language: {
+            noResults: function () {
+                return 'سمتی با این مشخصات یافت نشد!'
+            }
+        }
+    });
+    $('.grouping_id').select2({
+        dropdownParent: $('#add-users'),
+        language: {
+            noResults: function () {
+                return 'محل خدمتی با این مشخصات یافت نشد!'
+            }
+        }
+    });
+    $('.shift_id').select2({
+        dropdownParent: $('#add-users'),
+        language: {
+            noResults: function () {
+                return 'شیفتی با این مشخصات یافت نشد!'
+            }
+        }
+    });
+
+
+    $('.edit_role_id').select2({
+        dropdownParent: $('#edit-users'),
+        language: {
+            noResults: function () {
+                return 'سمتی با این مشخصات یافت نشد!'
+            }
+        }
+    });
+    $('.edit_grouping_id').select2({
+        dropdownParent: $('#edit-users'),
+        language: {
+            noResults: function () {
+                return 'محل خدمتی با این مشخصات یافت نشد!'
+            }
+        }
+    });
+    $('.edit_shift_id').select2({
+        dropdownParent: $('#edit-users'),
+        language: {
+            noResults: function () {
+                return 'شیفتی با این مشخصات یافت نشد!'
+            }
+        }
+    });
 
 </script>

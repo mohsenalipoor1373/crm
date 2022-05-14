@@ -176,6 +176,7 @@
                 type: 'GET',
                 success: function (data) {
                     $('#edit_name').val(data.name);
+                    $('#edit_label').val(data.label);
                     $('#id').val(data.id);
                     $('#load_modal').fadeOut();
                     $('#ajaxSpinnerDemo').addClass('d-none')

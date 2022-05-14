@@ -2,10 +2,12 @@
 
 namespace Modules\Roles\Http\Controllers;
 
+use DB;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Validator;
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use function GuzzleHttp\Promise\all;
 
@@ -101,7 +103,27 @@ class RolesController extends Controller
 
     public function roles_to_users($id)
     {
-      return view('roles::roles');
+        $permissions = Permission::get();
+        $rolePermission = DB::table("role_has_permissions")->where("role_has_permissions.role_id", $id)
+            ->pluck('role_has_permissions.permission_id', 'role_has_permissions.permission_id')
+            ->all();
+        return view('roles::roles', compact('id', 'permissions', 'rolePermission'));
+    }
+
+    public function post_data_permission_role(Request $request)
+    {
+
+        $validator = Validator::make($request->all(), [
+            'permission' => 'required',
+        ], [
+            'permission.required' => 'انتخاب دسترسی الزامی میباشد',
+        ]);
+        if ($validator->passes()) {
+            $role = Role::findById($request->id);
+            $role->syncPermissions($request->input('permission'));
+            return response()->json(['success' => 'دسترسی سمت سازمانی با موفقیت ویرایش شد', 'status' => 1]);
+        }
+        return response()->json(['errors' => $validator->errors(), 'status' => 0]);
     }
 
 }

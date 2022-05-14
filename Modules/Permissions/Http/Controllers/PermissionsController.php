@@ -23,6 +23,7 @@ class PermissionsController extends Controller
         <tr style='background-color: #e5e5e5'>
             <th width='1'>ردیف</th>
             <th>عنوان</th>
+            <th>لیبل</th>
             <th>ابزار</th>
         </tr>
         </thead>
@@ -34,6 +35,7 @@ class PermissionsController extends Controller
              <tr>
              <td style='background-color: #e5e5e5'>$number</td>
              <td>$item->name</td>
+             <td>$item->label</td>
              <td>
              <a href='#' class='fa fa-edit edit_permissions' title='ویرایش' data-id='{$item->id}'></a>&nbsp;&nbsp;
              <a href='#' class='fa fa-trash remove_permissions' data-id='{$item->id}' title='حذف' style='color: red !important;'></a>&nbsp;&nbsp;
@@ -59,12 +61,15 @@ class PermissionsController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
+            'label' => 'required',
         ], [
             'name.required' => 'وارد کردن عنوان دسترسی الزامی میباشد',
+            'label.required' => 'وارد کردن لیبل دسترسی الزامی میباشد',
         ]);
         if ($validator->passes()) {
             Permission::create([
                 'name' => $request['name'],
+                'label' => $request['label'],
             ]);
             return response()->json(['success' => 'مشخصات دسترسی با موفقیت ثبت شد', 'status' => 1]);
         }
@@ -75,11 +80,16 @@ class PermissionsController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'edit_name' => 'required',
+            'edit_label' => 'required',
         ], [
             'edit_name.required' => 'وارد کردن عنوان دسترسی الزامی میباشد',
+            'edit_label.required' => 'وارد کردن لیبل دسترسی الزامی میباشد',
         ]);
         if ($validator->passes()) {
-            Permission::findOrFail($request->id)->update(['name' => $request->edit_name]);
+            Permission::findOrFail($request->id)->update([
+                'name' => $request->edit_name,
+                'label' => $request->edit_label
+            ]);
             return response()->json(['success' => 'مشخصات نقش با موفقیت ویرایش شد', 'status' => 1]);
         }
         return response()->json(['errors' => $validator->errors(), 'status' => 0]);

@@ -6,5 +6,15 @@
     "Blog": true,
     "Masterbach": true,
     "Colors": true,
-    "Color": true
+    "Color": true,
+    "ColorMasterbatch": true,
+    "Shift": true,
+    "PrintingHouse": true,
+    "Material": true,
+    "Grade": true,
+    "Petrochemical": true,
+    "QualityMaterials": true,
+    "EarlyMaterials": true,
+    "ProductType": true,
+    "ProductShape": true
 }

@@ -23,10 +23,15 @@
                                         <input type="text" class="form-control"
                                                id="email" name="email" placeholder="نام کاربری">
                                     </div>
+
                                     <div class="col-md-6">
-                                        <label for="side">سمت سازمانی</label>
-                                        <input type="text" class="form-control"
-                                               id="side" name="side" placeholder="سمت سازمانی">
+                                        <label for="role_id">سمت سازمانی</label>
+                                        <select style="width: 100%" dir="rtl" class="form-control role_id" id="role_id" name="role_id">
+                                            <option value="">انتخاب کنید</option>
+                                            @foreach($roles as $role)
+                                                <option value="{{$role->id}}">{{$role->name}}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
 
 
@@ -44,6 +49,33 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+
+                                    <div class="col-md-6">
+                                        <label for="role_id">محل خدمت</label>
+                                        <select style="width: 100%" dir="rtl" class="form-control grouping_id"
+                                                id="grouping_id" name="grouping_id">
+                                            <option value="">انتخاب کنید</option>
+                                            @foreach($groupings as $grouping)
+                                                <option value="{{$grouping->id}}">{{$grouping->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="shift_id">شیفت کاری</label>
+                                        <select style="width: 100%" dir="rtl" class="form-control shift_id"
+                                                id="shift_id" name="shift_id">
+                                            <option value="">انتخاب کنید</option>
+                                            @foreach($shifts as $shift)
+                                                <option value="{{$shift->id}}">{{$shift->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+
+
+                                </div>
+                                <div class="form-group">
                                     <div class="col-md-6">
                                         <label for="pass">کلمه عبور</label>
                                         <input type="password" class="form-control"
@@ -51,14 +83,12 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <label for="role_id">سطح دسترسی</label>
-                                        <select class="form-control" id="role_id" name="role_id">
-                                            <option>گزینه 1</option>
-                                            <option>گزینه 2</option>
-                                        </select>
+                                        <label for="signature">امضاء</label>
+                                        <input class="form-control" type="file" id="signature" name="signature">
                                     </div>
 
                                 </div>
+
 
 
                             </div>
@@ -102,21 +132,25 @@
                 </div>
                 <div id="ajaxContentDemo" class="row d-none">
                     <div class="col-md-12">
+
                         <form method="POST" enctype="multipart/form-data" role="form"
                               autocomplete="off" id="form_edit_users">
                             @csrf
                             <input type="hidden" id="id" name="id">
+
                             <div class="box-body">
                                 <div class="form-group">
                                     <div class="col-md-6">
-                                        <label for="edit_username">نام کاربری</label>
+                                        <label for="edit_email">نام کاربری</label>
                                         <input type="text" class="form-control"
                                                id="edit_email" name="edit_email" placeholder="نام کاربری">
                                     </div>
+
                                     <div class="col-md-6">
-                                        <label for="edit_side">سمت سازمانی</label>
-                                        <input type="text" class="form-control"
-                                               id="edit_side" name="edit_side" placeholder="سمت سازمانی">
+                                        <label for="edit_role_id">سمت سازمانی</label>
+                                        <select style="width: 100%" dir="rtl" class="form-control edit_role_id"
+                                                id="edit_role_id" name="edit_role_id">
+                                        </select>
                                     </div>
 
 
@@ -134,25 +168,46 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+
                                     <div class="col-md-6">
-                                        <label for="edit_pass">کلمه عبور</label>
+                                        <label for="role_id">محل خدمت</label>
+                                        <select style="width: 100%" dir="rtl" class="form-control edit_grouping_id"
+                                                id="edit_grouping_id" name="edit_grouping_id">
+
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="shift_id">شیفت کاری</label>
+                                        <select style="width: 100%" dir="rtl" class="form-control edit_shift_id"
+                                                id="edit_shift_id" name="edit_shift_id">
+                                        </select>
+                                    </div>
+
+
+
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label for="pass">کلمه عبور</label>
                                         <input type="password" class="form-control"
                                                id="edit_pass" name="edit_pass" placeholder="کلمه عبور">
                                     </div>
 
                                     <div class="col-md-6">
-                                        <label for="edit_role_id">سطح دسترسی</label>
-                                        <select class="form-control" id="edit_role_id" name="edit_role_id">
-                                            <option>گزینه 1</option>
-                                            <option>گزینه 2</option>
-                                        </select>
+                                        <label for="signature">امضاء</label>
+                                        <input class="form-control" type="file" id="edit_signature" name="edit_signature">
                                     </div>
 
                                 </div>
 
 
+
                             </div>
                         </form>
+
+
+
                     </div>
                 </div>
 

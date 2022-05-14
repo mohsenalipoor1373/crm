@@ -34,8 +34,8 @@ class ColorController extends Controller
              <td style='background-color: #e5e5e5'>$number</td>
              <td>$item->name</td>
              <td>
-             <a href='#' class='fa fa-edit edit_masterbach' title='ویرایش' data-id='{$item->id}'></a>&nbsp;&nbsp;
-             <a href='#' class='fa fa-trash remove_masterbach' data-id='{$item->id}' title='حذف' style='color: red !important;'></a>&nbsp;&nbsp;
+             <a href='#' class='fa fa-edit edit_color' title='ویرایش' data-id='{$item->id}'></a>&nbsp;&nbsp;
+             <a href='#' class='fa fa-trash remove_color' data-id='{$item->id}' title='حذف' style='color: red !important;'></a>&nbsp;&nbsp;
              </td>
              </tr>
         ";
@@ -44,7 +44,7 @@ class ColorController extends Controller
         $output .= "
          </tbody>
          </table>
-        <a style='margin-top: -72px' class='btn btn-primary add_masterbach' id='add_masterbach'
+        <a style='margin-top: -72px' class='btn btn-primary add_color' id='add_color'
         >تعریف رنگ جدید</a>
         ";
         if ($request->ajax()) {
@@ -59,7 +59,7 @@ class ColorController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required',
         ], [
-            'name.required' => 'وارد کردن نام مستربچ الزامی میباشد',
+            'name.required' => 'وارد کردن نام رنگ الزامی میباشد',
         ]);
         if ($validator->passes()) {
             Color::create([
