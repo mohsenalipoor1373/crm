@@ -11,7 +11,7 @@
 |
 */
 
-Route::prefix('product_shape')->group(function() {
+Route::middleware('auth')->prefix('product_shape')->group(function() {
     Route::get('/', 'ProductShapeController@index')->name('product_shape');
     Route::post('post_data_product_shape', [\Modules\ProductShape\Http\Controllers\ProductShapeController::class, 'post_data_product_shape'])->name('post_data_product_shape');
     Route::post('post_data_edit_product_shape', [\Modules\ProductShape\Http\Controllers\ProductShapeController::class, 'post_data_edit_product_shape'])->name('post_data_edit_product_shape');

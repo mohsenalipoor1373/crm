@@ -8,7 +8,7 @@
                             <img src="{{asset('img/sa.png')}}" width="20">
                     </span>
                 </button>
-                <h4 class="modal-title"></h4>
+                <h7 class="modal-title" style="font-family: Shabnam">ثبت اطلاعات شیفت</h7>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -74,7 +74,7 @@
                             <img src="{{asset('img/sa.png')}}" width="20">
                     </span>
                 </button>
-                <h4 class="modal-title"></h4>
+                <h7 class="modal-title" style="font-family: Shabnam">ویرایش اطلاعات شیفت</h7>
             </div>
             <div class="modal-body">
                 <div id="load_modal" style="

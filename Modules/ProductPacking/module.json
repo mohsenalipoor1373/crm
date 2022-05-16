@@ -1,0 +1,13 @@
+{
+    "name": "ProductPacking",
+    "alias": "productpacking",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\ProductPacking\\Providers\\ProductPackingServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

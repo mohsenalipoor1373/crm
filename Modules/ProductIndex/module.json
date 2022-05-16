@@ -1,0 +1,13 @@
+{
+    "name": "ProductIndex",
+    "alias": "productindex",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\ProductIndex\\Providers\\ProductIndexServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

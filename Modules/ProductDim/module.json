@@ -1,0 +1,13 @@
+{
+    "name": "ProductDim",
+    "alias": "productdim",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\ProductDim\\Providers\\ProductDimServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

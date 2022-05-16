@@ -239,6 +239,7 @@
         });
 
         $('#basic_li').addClass("active");
+        $('#basic_li_material_all').addClass("active");
         $('#basic_li_masterbach').addClass("active");
         $('.modal-dialog').draggable({
             handle: ".modal-header"

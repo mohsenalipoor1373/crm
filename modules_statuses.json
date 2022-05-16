@@ -16,5 +16,14 @@
     "QualityMaterials": true,
     "EarlyMaterials": true,
     "ProductType": true,
-    "ProductShape": true
+    "ProductShape": true,
+    "ProductIndex": true,
+    "ProductDim": true,
+    "Product": true,
+    "ProductAccessories": true,
+    "Dealers": true,
+    "EssentialsPackingType": true,
+    "EssentialsPacking": true,
+    "EssentialsDealers": true,
+    "ProductPacking": true
 }

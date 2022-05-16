@@ -237,6 +237,7 @@
 
         });
 
+        $('#basic_li_product_all').addClass("active");
         $('#basic_li').addClass("active");
         $('#basic_li_product_type').addClass("active");
         $('.modal-dialog').draggable({

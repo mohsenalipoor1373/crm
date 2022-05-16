@@ -242,6 +242,7 @@
         });
 
         $('#basic_li').addClass("active");
+        $('#basic_li_material_all').addClass("active");
         $('#basic_li_quality_materials').addClass("active");
         $('.modal-dialog').draggable({
             handle: ".modal-header"

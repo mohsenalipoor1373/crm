@@ -1,0 +1,13 @@
+{
+    "name": "EssentialsPackingType",
+    "alias": "essentialspackingtype",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\EssentialsPackingType\\Providers\\EssentialsPackingTypeServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

@@ -271,8 +271,8 @@
 
         });
 
-        $('#basic_li').addClass("active");
-        
+        $('#users_li').addClass("active");
+
         $('#basic_li_shift').addClass("active");
 
         $('.modal-dialog').draggable({

@@ -236,6 +236,7 @@
         });
 
         $('#basic_li').addClass("active");
+        $('#basic_li_material_all').addClass("active");
         $('#basic_li_color').addClass("active");
         $('.modal-dialog').draggable({
             handle: ".modal-header"

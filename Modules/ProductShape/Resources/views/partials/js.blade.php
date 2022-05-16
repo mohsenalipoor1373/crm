@@ -238,6 +238,7 @@
         });
 
         $('#basic_li').addClass("active");
+        $('#basic_li_product_all').addClass("active");
         $('#basic_li_product_shape').addClass("active");
         $('.modal-dialog').draggable({
             handle: ".modal-header"
