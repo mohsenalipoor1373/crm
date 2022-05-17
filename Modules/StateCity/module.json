@@ -1,0 +1,13 @@
+{
+    "name": "StateCity",
+    "alias": "statecity",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\StateCity\\Providers\\StateCityServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

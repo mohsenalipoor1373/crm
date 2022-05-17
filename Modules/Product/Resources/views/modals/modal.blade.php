@@ -1,6 +1,6 @@
 <div class="modal fade" id="add-product" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content modal-lg">
+    <div class="modal-dialog col-md-12">
+        <div class="modal-content">
             <div class="modal-header" style="background-color: #e9e9e9;border-bottom-color:#dddddd;cursor: move">
                 <button type="button" style="background-color: red" class="close" data-dismiss="modal"
                         aria-label="Close">
@@ -18,18 +18,18 @@
                             @csrf
                             <div class="box-body">
                                 <div class="form-group">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label for="code">کد</label>
                                         <input type="text" class="form-control"
                                                id="code" name="code" placeholder="کد">
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label for="name">نام</label>
                                         <input type="text" class="form-control"
                                                id="name" name="name" placeholder="نام">
                                     </div>
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label for="role_id">نوع محصول</label>
                                         <select style="width: 100%" dir="rtl"
                                                 class="form-control product_type_id" id="product_type_id" name="product_type_id">
@@ -39,11 +39,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-
-
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label for="role_id">شکل محصول</label>
                                         <select style="width: 100%" dir="rtl"
                                                 class="form-control product_shape_id"
@@ -54,7 +50,11 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-md-4">
+
+
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-3">
                                         <label for="role_id">شاخص محصول</label>
                                         <select style="width: 100%" dir="rtl"
                                                 class="form-control product_index_id"
@@ -65,7 +65,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label for="role_id">ابعاد محصول</label>
                                         <select style="width: 100%" dir="rtl"
                                                 class="form-control product_dim_id"
@@ -76,45 +76,42 @@
                                             @endforeach
                                         </select>
                                     </div>
-
-
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label for="weight">وزن(گرم)</label>
                                         <input type="text" class="form-control"
                                                id="weight" name="weight" placeholder="وزن(گرم)">
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label for="wage">کارمزد(ریال)</label>
                                         <input type="text" class="form-control"
                                                id="wage" name="wage" onkeyup="this.value=separate(this.value);" placeholder="کارمزد(ریال)">
                                     </div>
-                                    <div class="col-md-4">
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <div class="col-md-3">
                                         <label for="per_sale">فی فروش(ریال)</label>
                                         <input type="text" class="form-control"
                                                id="per_sale" name="per_sale" onkeyup="this.value=separate(this.value);" placeholder="فی فروش(ریال)">
                                     </div>
 
-
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label for="production_capacity">ظرفیت تولید</label>
                                         <input type="text" class="form-control"
                                                id="production_capacity" name="production_capacity" placeholder="ظرفیت تولید">
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label for="place_production">محل تولید</label>
                                         <input type="text" class="form-control"
                                                id="place_production" name="place_production"
                                                placeholder="محل تولید">
                                     </div>
 
-
                                 </div>
+
+
 
                             </div>
                         </form>
@@ -133,8 +130,8 @@
 
 
 <div class="modal fade" id="edit-product" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content modal-lg">
+    <div class="modal-dialog col-md-12">
+        <div class="modal-content">
             <div class="modal-header" style="background-color: #e9e9e9;border-bottom-color:#dddddd;cursor: move">
                 <button type="button" style="background-color: red" class="close" data-dismiss="modal"
                         aria-label="Close">
@@ -163,18 +160,18 @@
                             <input type="hidden" id="id" name="id">
                             <div class="box-body">
                                 <div class="form-group">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label for="edit_code">کد</label>
                                         <input type="text" class="form-control"
                                                id="edit_code" name="edit_code" placeholder="کد">
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label for="edit_name">نام</label>
                                         <input type="text" class="form-control"
                                                id="edit_name" name="edit_name" placeholder="نام">
                                     </div>
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label for="role_id">نوع محصول</label>
                                         <select style="width: 100%" dir="rtl"
                                                 class="form-control edit_product_type_id"
@@ -184,10 +181,7 @@
                                         </select>
                                     </div>
 
-
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label for="role_id">شکل محصول</label>
                                         <select style="width: 100%" dir="rtl"
                                                 class="form-control edit_product_shape_id"
@@ -195,7 +189,10 @@
 
                                         </select>
                                     </div>
-                                    <div class="col-md-4">
+                                </div>
+                                <div class="form-group">
+
+                                    <div class="col-md-3">
                                         <label for="role_id">شاخص محصول</label>
                                         <select style="width: 100%" dir="rtl"
                                                 class="form-control edit_product_index_id"
@@ -203,7 +200,7 @@
 
                                         </select>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label for="role_id">ابعاد محصول</label>
                                         <select style="width: 100%" dir="rtl"
                                                 class="form-control edit_product_dim_id"
@@ -212,44 +209,40 @@
                                         </select>
                                     </div>
 
-
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label for="edit_weight">وزن(گرم)</label>
                                         <input type="text" class="form-control"
                                                id="edit_weight" name="edit_weight" placeholder="وزن(گرم)">
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label for="edit_wage">کارمزد(ریال)</label>
                                         <input type="text" class="form-control"
                                                id="edit_wage" name="edit_wage" onkeyup="this.value=separate(this.value);" placeholder="کارمزد(ریال)">
                                     </div>
-                                    <div class="col-md-4">
+                                </div>
+
+                                <div class="form-group">
+
+                                    <div class="col-md-3">
                                         <label for="edit_per_sale">فی فروش(ریال)</label>
                                         <input type="text" class="form-control"
                                                id="edit_per_sale" name="edit_per_sale" onkeyup="this.value=separate(this.value);" placeholder="فی فروش(ریال)">
                                     </div>
-
-
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label for="edit_production_capacity">ظرفیت تولید</label>
                                         <input type="text" class="form-control"
                                                id="edit_production_capacity" name="edit_production_capacity" placeholder="ظرفیت تولید">
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label for="edit_place_production">محل تولید</label>
                                         <input type="text" class="form-control"
                                                id="edit_place_production" name="edit_place_production"
                                                placeholder="محل تولید">
                                     </div>
 
-
                                 </div>
+
+
 
                             </div>
                         </form>

@@ -1,0 +1,13 @@
+{
+    "name": "Industrial",
+    "alias": "industrial",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Industrial\\Providers\\IndustrialServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

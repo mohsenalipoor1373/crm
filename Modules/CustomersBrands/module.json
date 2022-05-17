@@ -1,0 +1,13 @@
+{
+    "name": "CustomersBrands",
+    "alias": "customersbrands",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\CustomersBrands\\Providers\\CustomersBrandsServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

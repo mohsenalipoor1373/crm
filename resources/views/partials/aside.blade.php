@@ -212,6 +212,59 @@
                             </li>
                         @endcan
 
+                        @can('صنایع','مناطق','مشتری','برند مشتریان','نماینده مشتری')
+                            <li class="treeview" id="basic_li_customers_all">
+                                <a href="#"><i class="fa fa-circle-o"></i>تعاریف مشتریان
+                                    <span class="pull-left-container">
+                  <i class="fa fa-angle-right pull-left"></i>
+                </span>
+                                </a>
+                                <ul class="treeview-menu">
+
+                                    @can('مشتری')
+                                        <li id="basic_li_customers">
+                                            <a href="{{route('customers')}}"><i
+                                                    class="fa fa-circle-o"></i>
+                                                مشتری</a>
+                                        </li>
+                                    @endcan
+
+                                    @can('برند مشتریان')
+                                        <li id="basic_li_customers_brands">
+                                            <a href="{{route('customers_brands')}}"><i
+                                                    class="fa fa-circle-o"></i>
+                                                برند مشتریان</a>
+                                        </li>
+                                    @endcan
+
+                                        @can('نماینده مشتری')
+                                            <li id="basic_li_customers_agent">
+                                                <a href="{{route('customers_agent')}}"><i
+                                                        class="fa fa-circle-o"></i>
+                                                    نماینده مشتری</a>
+                                            </li>
+                                        @endcan
+                                    @can('صنایع')
+                                        <li id="basic_li_industrial">
+                                            <a href="{{route('industrial')}}"><i
+                                                    class="fa fa-circle-o"></i>
+                                                صنایع</a>
+                                        </li>
+                                    @endcan
+
+                                    @can('مناطق')
+                                        <li id="basic_li_state_city">
+                                            <a href="{{route('state_city')}}"><i
+                                                    class="fa fa-circle-o"></i>
+                                                مناطق</a>
+                                        </li>
+                                    @endcan
+
+                                </ul>
+                            </li>
+                        @endcan
+
+
                         @can('چاپخانه')
                             <li id="basic_li_printing_house">
                                 <a href="{{route('printing_house')}}"><i class="fa fa-circle-o"></i> چاپخانه </a>

@@ -1,6 +1,6 @@
 <div class="modal fade" id="add-users" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content modal-lg">
+    <div class="modal-dialog col-md-12">
+        <div class="modal-content">
             <div class="modal-header" style="background-color: #e9e9e9;border-bottom-color:#dddddd;cursor: move">
                 <button type="button" style="background-color: red" class="close" data-dismiss="modal"
                         aria-label="Close">
@@ -18,13 +18,13 @@
                             @csrf
                             <div class="box-body">
                                 <div class="form-group">
-                                    <div class="col-md-6">
+                                    <div class="col-md-3">
                                         <label for="username">نام کاربری</label>
                                         <input type="text" class="form-control"
                                                id="email" name="email" placeholder="نام کاربری">
                                     </div>
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-3">
                                         <label for="role_id">سمت سازمانی</label>
                                         <select style="width: 100%" dir="rtl" class="form-control role_id" id="role_id" name="role_id">
                                             <option value="">انتخاب کنید</option>
@@ -33,24 +33,22 @@
                                             @endforeach
                                         </select>
                                     </div>
-
-
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-6">
+                                    <div class="col-md-3">
                                         <label for="lname">نام</label>
                                         <input type="text" class="form-control"
                                                id="lname" name="lname" placeholder="نام">
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-3">
                                         <label for="fname">نام خانوادگی</label>
                                         <input type="text" class="form-control"
                                                id="fname" name="fname" placeholder="نام خانوادگی">
                                     </div>
+
                                 </div>
+
                                 <div class="form-group">
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-3">
                                         <label for="role_id">محل خدمت</label>
                                         <select style="width: 100%" dir="rtl" class="form-control grouping_id"
                                                 id="grouping_id" name="grouping_id">
@@ -61,7 +59,7 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-3">
                                         <label for="shift_id">شیفت کاری</label>
                                         <select style="width: 100%" dir="rtl" class="form-control shift_id"
                                                 id="shift_id" name="shift_id">
@@ -71,23 +69,20 @@
                                             @endforeach
                                         </select>
                                     </div>
-
-
-
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-6">
+                                    <div class="col-md-3">
                                         <label for="pass">کلمه عبور</label>
                                         <input type="password" class="form-control"
                                                id="pass" name="pass" placeholder="کلمه عبور">
                                     </div>
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-3">
                                         <label for="signature">امضاء</label>
                                         <input class="form-control" type="file" id="signature" name="signature">
                                     </div>
 
+
                                 </div>
+
 
 
 
@@ -108,8 +103,8 @@
 
 
 <div class="modal fade" id="edit-users" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content modal-lg">
+    <div class="modal-dialog col-md-12">
+        <div class="modal-content">
             <div class="modal-header" style="background-color: #e9e9e9;border-bottom-color:#dddddd;cursor: move">
                 <button type="button" style="background-color: red" class="close" data-dismiss="modal"
                         aria-label="Close">
@@ -140,36 +135,34 @@
 
                             <div class="box-body">
                                 <div class="form-group">
-                                    <div class="col-md-6">
+                                    <div class="col-md-3">
                                         <label for="edit_email">نام کاربری</label>
                                         <input type="text" class="form-control"
                                                id="edit_email" name="edit_email" placeholder="نام کاربری">
                                     </div>
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-3">
                                         <label for="edit_role_id">سمت سازمانی</label>
                                         <select style="width: 100%" dir="rtl" class="form-control edit_role_id"
                                                 id="edit_role_id" name="edit_role_id">
                                         </select>
                                     </div>
 
-
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-6">
+                                    <div class="col-md-3">
                                         <label for="edit_lname">نام</label>
                                         <input type="text" class="form-control"
                                                id="edit_lname" name="edit_lname" placeholder="نام">
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-3">
                                         <label for="edit_fname">نام خانوادگی</label>
                                         <input type="text" class="form-control"
                                                id="edit_fname" name="edit_fname" placeholder="نام خانوادگی">
                                     </div>
                                 </div>
+
                                 <div class="form-group">
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-3">
                                         <label for="role_id">محل خدمت</label>
                                         <select style="width: 100%" dir="rtl" class="form-control edit_grouping_id"
                                                 id="edit_grouping_id" name="edit_grouping_id">
@@ -177,27 +170,24 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-3">
                                         <label for="shift_id">شیفت کاری</label>
                                         <select style="width: 100%" dir="rtl" class="form-control edit_shift_id"
                                                 id="edit_shift_id" name="edit_shift_id">
                                         </select>
                                     </div>
 
-
-
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-6">
+                                    <div class="col-md-3">
                                         <label for="pass">کلمه عبور</label>
                                         <input type="password" class="form-control"
                                                id="edit_pass" name="edit_pass" placeholder="کلمه عبور">
                                     </div>
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-3">
                                         <label for="signature">امضاء</label>
                                         <input class="form-control" type="file" id="edit_signature" name="edit_signature">
                                     </div>
+
 
                                 </div>
 

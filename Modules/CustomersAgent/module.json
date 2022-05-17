@@ -1,0 +1,13 @@
+{
+    "name": "CustomersAgent",
+    "alias": "customersagent",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\CustomersAgent\\Providers\\CustomersAgentServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

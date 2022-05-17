@@ -25,5 +25,10 @@
     "EssentialsPackingType": true,
     "EssentialsPacking": true,
     "EssentialsDealers": true,
-    "ProductPacking": true
+    "ProductPacking": true,
+    "Industrial": true,
+    "StateCity": true,
+    "Customers": true,
+    "CustomersBrands": true,
+    "CustomersAgent": true
 }
