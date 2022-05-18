@@ -1,0 +1,13 @@
+{
+    "name": "EventsType",
+    "alias": "eventstype",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\EventsType\\Providers\\EventsTypeServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

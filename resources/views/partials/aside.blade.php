@@ -48,7 +48,7 @@
                 </li>
             @endcan
 
-            @can('نوع محصول','شکل محصول','شاخص محصول','ابعاد محصول','محصول','قطعه مونتاژی','رنگ','مستربچ','رنگ و مستربچ','مواد','گرید مواد','پتروشیمی','درجه کیفی مواد','مواد اولیه','چاپخانه')
+            @can('نوع محصول','شکل محصول','شاخص محصول','ابعاد محصول','محصول','قطعه مونتاژی','رنگ','نوع ملزومات','ملزومات بسته بندی','تامیین کننده','بسته بندی محصولات','صنایع','مناطق','مشتری','برند مشتریان','نماینده مشتری')
                 <li class="treeview" id="basic_li">
                     <a href="#">
                         <i class="fa fa-star"></i>
@@ -110,7 +110,6 @@
                                 </ul>
                             </li>
                         @endcan
-
 
                         @can('رنگ','مستربچ','رنگ و مستربچ','مواد','گرید مواد','پتروشیمی','درجه کیفی مواد','مواد اولیه')
                             <li class="treeview" id="basic_li_material_all">
@@ -237,13 +236,13 @@
                                         </li>
                                     @endcan
 
-                                        @can('نماینده مشتری')
-                                            <li id="basic_li_customers_agent">
-                                                <a href="{{route('customers_agent')}}"><i
-                                                        class="fa fa-circle-o"></i>
-                                                    نماینده مشتری</a>
-                                            </li>
-                                        @endcan
+                                    @can('نماینده مشتری')
+                                        <li id="basic_li_customers_agent">
+                                            <a href="{{route('customers_agent')}}"><i
+                                                    class="fa fa-circle-o"></i>
+                                                نماینده مشتری</a>
+                                        </li>
+                                    @endcan
                                     @can('صنایع')
                                         <li id="basic_li_industrial">
                                             <a href="{{route('industrial')}}"><i
@@ -257,6 +256,50 @@
                                             <a href="{{route('state_city')}}"><i
                                                     class="fa fa-circle-o"></i>
                                                 مناطق</a>
+                                        </li>
+                                    @endcan
+
+                                </ul>
+                            </li>
+                        @endcan
+
+                        @can('انواع رویداد','موضوع رویداد','نتایج رویداد','دلایل نتایج رویداد')
+                            <li class="treeview" id="basic_li_events_all">
+                                <a href="#"><i class="fa fa-circle-o"></i>تعاریف رویداد
+                                    <span class="pull-left-container">
+                  <i class="fa fa-angle-right pull-left"></i>
+                </span>
+                                </a>
+                                <ul class="treeview-menu">
+
+                                    @can('انواع رویداد')
+                                        <li id="basic_li_events_type">
+                                            <a href="{{route('events_type')}}"><i
+                                                    class="fa fa-circle-o"></i>
+                                                انواع رویداد</a>
+                                        </li>
+                                    @endcan
+
+                                    @can('موضوع رویداد')
+                                        <li id="basic_li_events_subject">
+                                            <a href="{{route('events_subject')}}"><i
+                                                    class="fa fa-circle-o"></i>
+                                                موضوع رویداد</a>
+                                        </li>
+                                    @endcan
+                                    @can('نتایج رویداد')
+                                        <li id="basic_li_events_result">
+                                            <a href="{{route('events_result')}}"><i
+                                                    class="fa fa-circle-o"></i>
+                                                نتایج رویداد</a>
+                                        </li>
+                                    @endcan
+
+                                    @can('دلایل نتایج رویداد')
+                                        <li id="basic_li_events_result_reason">
+                                            <a href="{{route('events_result_reason')}}"><i
+                                                    class="fa fa-circle-o"></i>
+                                                دلایل نتایج رویداد</a>
                                         </li>
                                     @endcan
 

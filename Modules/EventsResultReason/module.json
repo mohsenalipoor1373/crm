@@ -1,0 +1,13 @@
+{
+    "name": "EventsResultReason",
+    "alias": "eventsresultreason",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\EventsResultReason\\Providers\\EventsResultReasonServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
