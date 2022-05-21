@@ -7,6 +7,12 @@
         <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
             <span class="sr-only">Toggle navigation</span>
         </a>
+        &nbsp;&nbsp;
+        <a href="#" id="search_customer" class="search_customer"
+           style="font-family: Shabnam !important;" data-toggle="popover" data-content="CRM مشتری">
+            <i class="fa fa-users fa-2x"
+               style="color: white !important;margin-top: 10px"></i></a>
+
 
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
@@ -51,17 +57,15 @@
                             </div>
                             <div class="pull-left">
 
-                                    <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+                                <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        خروج
-                                    </a>
+                                    خروج
+                                </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-
-
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
 
 
                             </div>

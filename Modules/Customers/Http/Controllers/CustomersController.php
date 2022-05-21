@@ -224,4 +224,7 @@ class CustomersController extends Controller
         $date = Jalalian::forge($val)->format('Y/m/d');
         return $date;
     }
+
+
+
 }

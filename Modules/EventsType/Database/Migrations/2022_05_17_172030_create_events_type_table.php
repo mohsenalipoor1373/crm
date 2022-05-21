@@ -15,6 +15,7 @@ return new class extends Migration {
         Schema::create('events_type', function (Blueprint $table) {
             $table->id()->index();
             $table->string('name');
+            $table->string('icon');
             $table->timestamps();
         });
     }

@@ -57,7 +57,7 @@
                 <h7 class="modal-title" style="font-family: Shabnam">ویرایش اطلاعات گرید مواد</h7>
             </div>
             <div class="modal-body">
-                <div id="load_modal" style="
+                <div  id="load_modal" style="
                          position: fixed;
                          opacity: 0.95;
                          left: 0px;

@@ -34,5 +34,8 @@
     "EventsType": true,
     "EventsSubject": true,
     "EventsResult": true,
-    "EventsResultReason": true
+    "EventsResultReason": true,
+    "SettingCompany": true,
+    "SettingCheckout": true,
+    "SearchCustomer": true
 }

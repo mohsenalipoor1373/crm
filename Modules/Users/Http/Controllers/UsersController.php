@@ -26,7 +26,8 @@ class UsersController extends Controller
         $shifts = Shift::all();
         $data = User::orderBy('id', 'DESC')->get();
         $output = "
-       <table id='data-table' class='table table-bordered table-striped text-center data-table' style='width:100%'>
+       <table id='data-table' class='table table-bordered table-striped responsive text-center data-table'
+        style='width:100%'>
         <thead>
         <tr>
             <th class='text-center' colspan='20' style='background-color: #cddbf6'>لیست کاربران</th>

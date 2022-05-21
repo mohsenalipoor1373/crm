@@ -22,6 +22,11 @@
                                     <input type="text" class="form-control"
                                            id="name" name="name" placeholder="شرح رویداد">
                                 </div>
+                                <div class="form-group">
+                                    <label for="icon">آیکون رویداد</label>
+                                    <input type="file" class="form-control"
+                                           id="icon" name="icon" placeholder="آیکون رویداد">
+                                </div>
 
                             </div>
                         </form>
@@ -73,6 +78,11 @@
                                     <label for="edit_username">شرح رویداد</label>
                                     <input type="text" class="form-control"
                                            id="edit_name" name="edit_name" placeholder="شرح رویداد">
+                                </div>
+                                <div class="form-group">
+                                    <label for="edit_icon">آیکون رویداد</label>
+                                    <input type="file" class="form-control"
+                                           id="edit_icon" name="edit_icon" placeholder="آیکون رویداد">
                                 </div>
 
 

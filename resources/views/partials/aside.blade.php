@@ -48,7 +48,9 @@
                 </li>
             @endcan
 
-            @can('نوع محصول','شکل محصول','شاخص محصول','ابعاد محصول','محصول','قطعه مونتاژی','رنگ','نوع ملزومات','ملزومات بسته بندی','تامیین کننده','بسته بندی محصولات','صنایع','مناطق','مشتری','برند مشتریان','نماینده مشتری')
+            @can('نوع محصول','شکل محصول','شاخص محصول','ابعاد محصول','محصول','قطعه مونتاژی','رنگ',
+'نوع ملزومات','ملزومات بسته بندی','تامیین کننده','بسته بندی محصولات','صنایع','مناطق','مشتری',
+'برند مشتریان','نماینده مشتری','انواع رویداد','موضوع رویداد','نتایج رویداد','دلایل نتایج رویداد')
                 <li class="treeview" id="basic_li">
                     <a href="#">
                         <i class="fa fa-star"></i>
@@ -306,6 +308,35 @@
                                 </ul>
                             </li>
                         @endcan
+
+                            @can('تنظیمات شرکت','تنظیمات تسویه حساب')
+                                <li class="treeview" id="basic_li_setting_all">
+                                    <a href="#"><i class="fa fa-circle-o"></i>تعاریف تنظیمات
+                                        <span class="pull-left-container">
+                  <i class="fa fa-angle-right pull-left"></i>
+                </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+
+                                        @can('تنظیمات شرکت')
+                                            <li id="basic_li_setting_company">
+                                                <a href="{{route('setting_company')}}"><i
+                                                        class="fa fa-circle-o"></i>
+                                                    تنظیمات شرکت</a>
+                                            </li>
+                                        @endcan
+
+                                            @can('تنظیمات تسویه حساب')
+                                                <li id="basic_li_setting_checkout">
+                                                    <a href="{{route('setting_checkout')}}"><i
+                                                            class="fa fa-circle-o"></i>
+                                                        تنظیمات تسویه حساب</a>
+                                                </li>
+                                            @endcan
+
+                                    </ul>
+                                </li>
+                            @endcan
 
 
                         @can('چاپخانه')

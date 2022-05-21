@@ -64,15 +64,23 @@
             $('#add-events_type').modal('show');
         });
 
+
         $('body').on('click', '.btn_add_events_type', function (e) {
             $('.btn_add_events_type').prop('disabled', true);
             var loadingText = 'در حال بررسی اطلاعات... <i class="fa fa-spinner fa-spin"></i>';
             $('.btn_add_events_type').html(loadingText);
             e.preventDefault(e);
+            var form = $('#form_add_events_type')[0];
+            var data = new FormData(form);
             $.ajax({
                 url: "{{route('post_data_events_type')}}",
-                data: $('#form_add_events_type').serialize(),
+                data: data,
                 type: 'POST',
+                enctype: 'multipart/form-data',
+                cache: false,
+                contentType: false,
+                processData: false,
+                method: 'POST',
                 success: function (data) {
                     if (data.status == 1) {
                         load_table();
@@ -116,15 +124,24 @@
             });
         });
 
+
+
         $('body').on('click', '.btn_edit_events_type', function (e) {
             $('.btn_edit_events_type').prop('disabled', true);
             var loadingText = 'در حال بررسی اطلاعات... <i class="fa fa-spinner fa-spin"></i>';
             $('.btn_edit_events_type').html(loadingText);
             e.preventDefault(e);
+            var form = $('#form_edit_events_type')[0];
+            var data = new FormData(form);
             $.ajax({
                 url: "{{route('post_data_edit_events_type')}}",
-                data: $('#form_edit_events_type').serialize(),
+                data: data,
                 type: 'POST',
+                enctype: 'multipart/form-data',
+                cache: false,
+                contentType: false,
+                processData: false,
+                method: 'POST',
                 success: function (data) {
                     if (data.status == 1) {
                         load_table();

@@ -23,6 +23,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $output = "
+        <div class='col-md-6'>
+        <canvas id='ChartComplaints' width='400' height='200'></canvas>
+
+    </div>
+    <div class='col-md-6'>
+        <canvas id='ChartSale' width='400' height='200'></canvas>
+
+    </div>
+        ";
+        return view('home',compact('output'));
     }
+
+
 }

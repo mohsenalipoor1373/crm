@@ -8,6 +8,10 @@
             }
         });
 
+
+
+
+
         function load_table() {
             $.ajax({
                 url: "{{route('users_index')}}",
@@ -30,7 +34,8 @@
                                 'previous': 'قبلی',
                                 'next': 'بعدی'
                             }
-                        }
+                        },
+                        responsive: true
 
                     });
 
@@ -38,6 +43,10 @@
                 }
             })
         }
+
+
+
+
 
         $('.data-table').DataTable({
             'paging': true,
@@ -56,7 +65,8 @@
                     'previous': 'قبلی',
                     'next': 'بعدی'
                 }
-            }
+            },
+            responsive: true
 
         });
 
