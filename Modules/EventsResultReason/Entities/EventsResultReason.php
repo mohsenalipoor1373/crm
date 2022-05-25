@@ -4,6 +4,7 @@ namespace Modules\EventsResultReason\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Modules\EventsCustomers\Entities\EventsCustomers;
 use Modules\EventsResult\Entities\EventsResult;
 use Modules\EventsSubject\Entities\EventsSubject;
 
@@ -27,6 +28,11 @@ class EventsResultReason extends Model
     public function events_result()
     {
         return $this->belongsTo(EventsResult::class, 'events_result_id');
+    }
+
+    public function events_customers()
+    {
+        return $this->hasMany(EventsCustomers::class);
     }
 
 

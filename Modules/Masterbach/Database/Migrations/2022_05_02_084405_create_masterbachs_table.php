@@ -13,7 +13,7 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('masterbachs', function (Blueprint $table) {
-            $table->id();
+            $table->id()->index();
             $table->integer('code');
             $table->string('name');
             $table->timestamps();

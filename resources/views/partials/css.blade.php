@@ -1,4 +1,5 @@
 <head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>سیستم مدیریت</title>
@@ -14,8 +15,10 @@
 
     <link rel="stylesheet" href="{{asset('assets/css/minimal.css')}}">
     <link href="{{asset('assets/css/select2.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/css/kamadatepicker.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/css/dropzone.css')}}" rel="stylesheet" />
 
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 <style>
     .swal2-container.swal2-center>.swal2-popup {
         grid-column: 2;
@@ -26,6 +29,18 @@
         font-family: Shabnam !important;
     }
 </style>
+
+
+    <style>
+        .dropzone {
+            background: white;
+            border-radius: 5px;
+            border: 2px dashed rgb(0, 135, 247);
+            border-image: none;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 
     <style>
         .loader {
@@ -99,7 +114,34 @@
         }
     </style>
 
+<style>
+    .float{
+        position:fixed;
+        width:60px;
+        height:60px;
+        bottom:40px;
+        left:40px;
+        background-color: #0080ff;
+        color:#FFF;
+        border-radius:50px;
+        text-align:center;
+        box-shadow: 2px 2px 2px #999;
+    }
 
+    .my-float{
+        margin-top:22px;
+    }
+</style>
+
+    <style>
+        .dropzone .dz-preview .dz-image {
+            width: 100px;
+            height: 100px;
+        }
+        .dz-image img{
+            width: 100px;
+        }
+    </style>
 
     @yield('css')
 

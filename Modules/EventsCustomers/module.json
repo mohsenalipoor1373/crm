@@ -1,0 +1,13 @@
+{
+    "name": "EventsCustomers",
+    "alias": "eventscustomers",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\EventsCustomers\\Providers\\EventsCustomersServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

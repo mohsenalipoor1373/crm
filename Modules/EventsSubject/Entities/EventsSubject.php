@@ -4,6 +4,7 @@ namespace Modules\EventsSubject\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Modules\EventsCustomers\Entities\EventsCustomers;
 use Modules\EventsResult\Entities\EventsResult;
 use Modules\EventsResultReason\Entities\EventsResultReason;
 
@@ -30,6 +31,10 @@ class EventsSubject extends Model
         return $this->hasMany(EventsResultReason::class);
     }
 
+    public function events_customers()
+    {
+        return $this->hasMany(EventsCustomers::class);
+    }
 
     protected static function newFactory()
     {

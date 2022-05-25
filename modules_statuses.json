@@ -37,5 +37,7 @@
     "EventsResultReason": true,
     "SettingCompany": true,
     "SettingCheckout": true,
-    "SearchCustomer": true
+    "SearchCustomer": true,
+    "EventsCustomers": true,
+    "Reminder": true
 }

@@ -14,6 +14,8 @@
     });
 </script>
 <script src="{{asset('assets/bower_components/jquery/dist/jquery.min.js')}}"></script>
+<script src="{{asset('assets/js/dropzone.js')}}" type="text/javascript"></script>
+
 <script src="{{asset('assets/bower_components/jquery-ui/jquery-ui.min.js')}}"></script>
 <script src="{{asset('assets/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('assets/dist/js/adminlte.min.js')}}"></script>
@@ -26,6 +28,8 @@
 <script src="{{asset('assets/js/datatable.js')}}" type="text/javascript"></script>
 <script src="{{asset('assets/js/datatables.bootstrap.js')}}" type="text/javascript"></script>
 <script src="{{asset('assets/js/select2.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('assets/js/kamadatepicker.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('assets/js/jquery.inputmask.bundle.js')}}"></script>
 
 @yield('script')
 

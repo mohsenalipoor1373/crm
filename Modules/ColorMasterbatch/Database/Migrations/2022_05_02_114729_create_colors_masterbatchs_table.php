@@ -13,7 +13,7 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('colors_masterbatchs', function (Blueprint $table) {
-            $table->id();
+            $table->id()->index();
             $table->unsignedBigInteger('color_id');
             $table->unsignedBigInteger('masterbatch_id');
             $table->string('price');
