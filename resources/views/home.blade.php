@@ -3,7 +3,7 @@
 
     {!! $output !!}
 
-    <script src="{{asset('assets/js/chart.min.js')}}"></script>
+    <script src="{{asset('/public/assets/js/chart.min.js')}}"></script>
     <script>
         Chart.defaults.font.family = "Shabnam";
         Chart.defaults.font.size = 13;

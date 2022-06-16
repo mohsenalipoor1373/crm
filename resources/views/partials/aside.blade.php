@@ -113,6 +113,83 @@
                             </li>
                         @endcan
 
+
+
+                                <li class="treeview" id="basic_li_label_all">
+                                    <a href="#"><i class="fa fa-circle-o"></i>تعاریف لیبل
+                                        <span class="pull-left-container">
+                  <i class="fa fa-angle-right pull-left"></i>
+                </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                            <li id="basic_li_label_type">
+                                                <a href="{{route('label_type')}}"><i class="fa fa-circle-o"></i>انواع لیبل
+                                                </a>
+                                            </li>
+                                    </ul>
+                                </li>
+
+
+                        @can('انبار','نوع انبار')
+
+                            <li class="treeview" id="basic_li_stores_all">
+                                <a href="#"><i class="fa fa-circle-o"></i>تعاریف انبار
+                                    <span class="pull-left-container">
+                  <i class="fa fa-angle-right pull-left"></i>
+                </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    @can('نوع انبار')
+                                        <li id="basic_li_stores_type">
+                                            <a href="{{route('stores_type')}}"><i class="fa fa-circle-o"></i>نوع انبار
+                                            </a>
+                                        </li>
+                                    @endcan
+                                    @can('انبار')
+                                        <li id="basic_li_stores">
+                                            <a href="{{route('stores')}}"><i class="fa fa-circle-o"></i>انبار
+                                            </a>
+                                        </li>
+                                    @endcan
+                                </ul>
+                            </li>
+                        @endcan
+
+
+
+                            <li class="treeview" id="basic_li_material_transaction_all">
+                                <a href="#"><i class="fa fa-circle-o"></i>تعاریف تراکنش
+                                    <span class="pull-left-container">
+                  <i class="fa fa-angle-right pull-left"></i>
+                </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li id="basic_li_material_inventory_transaction_type">
+                                        <a href="{{route('material_inventory_transaction_type')}}"><i class="fa fa-circle-o"></i>انواع تراکنش انبار مواد اولیه
+                                        </a>
+                                    </li>
+                                    <li id="basic_li_product_inventory_transaction_type">
+                                        <a href="{{route('product_inventory_transaction_type')}}"><i class="fa fa-circle-o"></i>انواع تراکنش انبار محصول
+                                        </a>
+                                    </li>
+                                    <li id="basic_li_label_inventory_transaction_type">
+                                        <a href="{{route('label_inventory_transaction_type')}}"><i class="fa fa-circle-o"></i>انواع تراکنش انبار لیبل
+                                        </a>
+                                    </li>
+
+                                    <li id="basic_li_stores_type">
+                                        <a href="#"><i class="fa fa-circle-o"></i>انواع تراکنش انبار ملزومات
+                                        </a>
+                                    </li>
+                                    <li id="basic_li_stores_type">
+                                        <a href="#"><i class="fa fa-circle-o"></i>انواع تراکنش انبار مستربچ
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+
                         @can('رنگ','مستربچ','رنگ و مستربچ','مواد','گرید مواد','پتروشیمی','درجه کیفی مواد','مواد اولیه')
                             <li class="treeview" id="basic_li_material_all">
                                 <a href="#"><i class="fa fa-circle-o"></i>تعاریف مواد
@@ -309,35 +386,34 @@
                             </li>
                         @endcan
 
-                            @can('تنظیمات شرکت','تنظیمات تسویه حساب')
-                                <li class="treeview" id="basic_li_setting_all">
-                                    <a href="#"><i class="fa fa-circle-o"></i>تعاریف تنظیمات
-                                        <span class="pull-left-container">
+                        @can('تنظیمات شرکت','تنظیمات تسویه حساب')
+                            <li class="treeview" id="basic_li_setting_all">
+                                <a href="#"><i class="fa fa-circle-o"></i>تعاریف تنظیمات
+                                    <span class="pull-left-container">
                   <i class="fa fa-angle-right pull-left"></i>
                 </span>
-                                    </a>
-                                    <ul class="treeview-menu">
+                                </a>
+                                <ul class="treeview-menu">
 
-                                        @can('تنظیمات شرکت')
-                                            <li id="basic_li_setting_company">
-                                                <a href="{{route('setting_company')}}"><i
-                                                        class="fa fa-circle-o"></i>
-                                                    تنظیمات شرکت</a>
-                                            </li>
-                                        @endcan
+                                    @can('تنظیمات شرکت')
+                                        <li id="basic_li_setting_company">
+                                            <a href="{{route('setting_company')}}"><i
+                                                    class="fa fa-circle-o"></i>
+                                                تنظیمات شرکت</a>
+                                        </li>
+                                    @endcan
 
-                                            @can('تنظیمات تسویه حساب')
-                                                <li id="basic_li_setting_checkout">
-                                                    <a href="{{route('setting_checkout')}}"><i
-                                                            class="fa fa-circle-o"></i>
-                                                        تنظیمات تسویه حساب</a>
-                                                </li>
-                                            @endcan
+                                    @can('تنظیمات تسویه حساب')
+                                        <li id="basic_li_setting_checkout">
+                                            <a href="{{route('setting_checkout')}}"><i
+                                                    class="fa fa-circle-o"></i>
+                                                تنظیمات تسویه حساب</a>
+                                        </li>
+                                    @endcan
 
-                                    </ul>
-                                </li>
-                            @endcan
-
+                                </ul>
+                            </li>
+                        @endcan
 
                         @can('چاپخانه')
                             <li id="basic_li_printing_house">
@@ -349,6 +425,28 @@
                     </ul>
                 </li>
             @endcan
+
+
+            <li class="treeview" id="users_li">
+                <a href="#">
+                    <i class="fa fa-archive"></i>
+                    <span>انبار</span>
+                    <span class="pull-left-container">
+              <i class="fa fa-angle-right pull-left"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li id="users_li_index">
+                        <a href="{{route('users_index')}}"><i class="fa fa-circle-o"></i> انبار محصول</a>
+                    </li>
+                    <li id="users_li_index">
+                        <a href="{{route('users_index')}}"><i class="fa fa-circle-o"></i> انبار مواد اولیه</a>
+                    </li>
+
+                </ul>
+            </li>
+
+
         </ul>
     </section>
 </aside>

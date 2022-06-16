@@ -2,21 +2,22 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>سیستم مدیریت</title>
+    <title>سیستم مدیریت سودی بسپار</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="{{asset('assets/dist/css/bootstrap-theme.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/dist/css/rtl.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/bower_components/font-awesome/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/bower_components/Ionicons/css/ionicons.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/dist/css/AdminLTE.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/dist/css/skins/_all-skins.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/bower_components/jvectormap/jquery-jvectormap.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/datatables.bootstrap-rtl.css')}}">
+    <link rel="stylesheet" href="{{asset('/public/assets/dist/css/bootstrap-theme.css')}}">
+    <link rel="stylesheet" href="{{asset('/public/assets/dist/css/rtl.css')}}">
+    <link rel="stylesheet" href="{{asset('/public/assets/bower_components/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/public/assets/bower_components/Ionicons/css/ionicons.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/public/assets/dist/css/AdminLTE.css')}}">
+    <link rel="stylesheet" href="{{asset('/public/assets/dist/css/skins/_all-skins.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/public/assets/bower_components/jvectormap/jquery-jvectormap.css')}}">
+    <link rel="stylesheet" href="{{asset('/public/assets/css/datatables.bootstrap-rtl.css')}}">
 
-    <link rel="stylesheet" href="{{asset('assets/css/minimal.css')}}">
-    <link href="{{asset('assets/css/select2.min.css')}}" rel="stylesheet" />
-    <link href="{{asset('assets/css/kamadatepicker.min.css')}}" rel="stylesheet" />
-    <link href="{{asset('assets/css/dropzone.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{asset('/public/assets/css/minimal.css')}}">
+    <link href="{{asset('/public/assets/css/select2.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('/public/assets/css/kamadatepicker.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('/public/assets/css/dropzone.css')}}" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="{{asset('/public/assets/img/favicon.ico')}}">
 
 
 <style>
@@ -51,7 +52,7 @@
             width: 100%;
             height: 100%;
             z-index: 999999;
-            background: url({{asset('assets/dist/img/ajax-loader.gif')}}) 50% 50% no-repeat #f5f5f5;
+            background: url({{asset('/public/assets/dist/img/ajax-loader.gif')}}) 50% 50% no-repeat #f5f5f5;
         }
     </style>
 
@@ -59,10 +60,10 @@
     <style>
         @font-face {
             font-family: "Shabnam";
-            src: url("{{asset('assets/fonts/Shabnam/Farsi-Digits/Shabnam-Bold-FD.eot')}}"),
-            url("{{asset('assets/fonts/Shabnam/Farsi-Digits/Shabnam-Bold-FD.eot')}}") format("embedded-opentype"),
-            url("{{asset('assets/fonts/Shabnam/Farsi-Digits/Shabnam-Bold-FD.woff')}}") format("woff"),
-            url("{{asset('assets/fonts/Shabnam/Farsi-Digits/Shabnam-Bold-FD.ttf')}}") format("truetype");
+            src: url("{{asset('/public/assets/fonts/Shabnam/Farsi-Digits/Shabnam-Bold-FD.eot')}}"),
+            url("{{asset('/public/assets/fonts/Shabnam/Farsi-Digits/Shabnam-Bold-FD.eot')}}") format("embedded-opentype"),
+            url("{{asset('/public/assets/fonts/Shabnam/Farsi-Digits/Shabnam-Bold-FD.woff')}}") format("woff"),
+            url("{{asset('/public/assets/fonts/Shabnam/Farsi-Digits/Shabnam-Bold-FD.ttf')}}") format("truetype");
         }
     </style>
     <style>

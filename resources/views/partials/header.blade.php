@@ -1,6 +1,6 @@
 <header class="main-header">
     <div class="logo">
-        <span class="logo-mini">پنل</span>
+        <span class="logo-mini">سودی بسپار</span>
         <span class="logo-lg"><b>سیستم مدیریت</b></span>
     </div>
     <nav class="navbar navbar-static-top">
@@ -39,12 +39,12 @@
                 </li>
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="{{asset('assets/dist/img/User_Icon.png')}}" class="user-image" alt="User Image">
+                        <img src="{{asset('/public/assets/dist/img/User_Icon.png')}}" class="user-image" alt="User Image">
                         <span class="hidden-xs">{{auth()->user()->name}} {{auth()->user()->fname}}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <li class="user-header">
-                            <img src="{{asset('assets/dist/img/User_Icon.png')}}" class="img-circle" alt="User Image">
+                            <img src="{{asset('/public/assets/dist/img/User_Icon.png')}}" class="img-circle" alt="User Image">
 
                             <p>
                                 {{auth()->user()->name}} {{auth()->user()->fname}}

@@ -8,7 +8,7 @@
                           autocomplete="off">
                         @csrf
                         <span class="login100-form-title p-b-33" style="font-family: Shabnam">
-						 سیستم مدیریت
+						 سیستم مدیریت سودی بسپار
 					</span>
 
                     <div class="wrap-input100" data-validate = "وارد کردن نام کاربری الزامی میباشد">

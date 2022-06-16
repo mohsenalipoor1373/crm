@@ -33,7 +33,7 @@
                                             data-dismiss="modal"
                                             aria-label="Close">
                     <span aria-hidden="true" style="color: white">
-                            <img src="{{asset('img/sa.png')}}" width="20">
+                            <img src="{{asset('/public/img/sa.png')}}" width="20">
                     </span>
                                     </button>
                                     <h7 class="modal-title" style="font-family: Shabnam">جستجوی مشتری</h7>
@@ -48,7 +48,7 @@
                          width: 100%;
                          height: 100%;
                          z-index: 999999;
-                         background: url({{asset('assets/dist/img/ajax-loader.gif')}}) 50% 50% no-repeat #f5f5f5">
+                         background: url({{asset('/public/assets/dist/img/ajax-loader.gif')}}) 50% 50% no-repeat #f5f5f5">
                                     </div>
                                     <div class="row">
                                         <div id="ajaxContentDemo" class="row d-none">

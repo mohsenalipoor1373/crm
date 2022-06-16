@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Modules\EventsCustomers\Entities\EventsCustomers;
-use Modules\Grouping\Entities\Grouping;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Traits\HasRoles;
 
@@ -54,12 +52,17 @@ class User extends Authenticatable
     }
     public function grouping()
     {
-        return $this->belongsTo(Grouping::class,'grouping_id');
+        return $this->belongsTo(\App\Models\Grouping::class,'grouping_id');
     }
 
     public function events_customers()
     {
         return $this->hasMany(EventsCustomers::class);
+    }
+
+    public function customers()
+    {
+        return $this->hasMany(Customers::class);
     }
 
 }
