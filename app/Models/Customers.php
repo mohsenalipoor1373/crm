@@ -48,4 +48,8 @@ class Customers extends Model
     {
         return $this->hasMany(CustomersBrands::class);
     }
+    public function label_design()
+    {
+        return $this->hasMany(LabelDesign::class);
+    }
 }

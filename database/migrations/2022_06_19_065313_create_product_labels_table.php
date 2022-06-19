@@ -12,30 +12,33 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('label_designs', function (Blueprint $table) {
-
+        Schema::create('product_labels', function (Blueprint $table) {
             $table->id()->index();
             $table->string('code');
-            $table->unsignedBigInteger('customer_id');
-            $table->unsignedBigInteger('label_type_id');
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('label_design_id');
+            $table->unsignedBigInteger('color_id');
             $table->string('name');
-            $table->text('text')->nullable();
-            $table->integer('status')->default('1');
             $table->timestamps();
 
-            $table->foreign('customer_id')
+            $table->foreign('product_id')
                 ->references('id')
-                ->on('customers')
+                ->on('products')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->foreign('label_type_id')
+            $table->foreign('label_design_id')
                 ->references('id')
-                ->on('label_types')
+                ->on('label_designs')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-
+            $table->foreign('color_id')
+                ->references('id')
+                ->on('colors')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            
         });
     }
 
@@ -46,6 +49,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('label_designs');
+        Schema::dropIfExists('product_labels');
     }
 };

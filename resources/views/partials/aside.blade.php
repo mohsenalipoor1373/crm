@@ -101,6 +101,7 @@
                                             <a href="{{route('product')}}"><i class="fa fa-circle-o"></i> محصول </a>
                                         </li>
                                     @endcan
+
                                     @can('قطعه مونتاژی')
                                         <li id="basic_li_product_accessories">
                                             <a href="{{route('product_accessories')}}"><i class="fa fa-circle-o"></i>
@@ -114,20 +115,30 @@
                         @endcan
 
 
-
-                                <li class="treeview" id="basic_li_label_all">
-                                    <a href="#"><i class="fa fa-circle-o"></i>تعاریف لیبل
-                                        <span class="pull-left-container">
+                        <li class="treeview" id="basic_li_label_all">
+                            <a href="#"><i class="fa fa-circle-o"></i>تعاریف لیبل
+                                <span class="pull-left-container">
                   <i class="fa fa-angle-right pull-left"></i>
                 </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="basic_li_label_type">
+                                    <a href="{{route('label_type')}}"><i class="fa fa-circle-o"></i>انواع لیبل
                                     </a>
-                                    <ul class="treeview-menu">
-                                            <li id="basic_li_label_type">
-                                                <a href="{{route('label_type')}}"><i class="fa fa-circle-o"></i>انواع لیبل
-                                                </a>
-                                            </li>
-                                    </ul>
                                 </li>
+                                <li id="basic_li_label_design">
+                                    <a href="{{route('label_design')}}"><i class="fa fa-circle-o"></i>طرح لیبل
+                                    </a>
+                                </li>
+                                <li id="basic_li_label_design_version">
+                                    <a href="{{route('label_design_version')}}"><i class="fa fa-circle-o"></i>ورژن لیبل
+                                    </a>
+                                </li>
+                                <li id="basic_li_product_label">
+                                    <a href="{{route('product_label')}}"><i class="fa fa-circle-o"></i> محصول و لیبل </a>
+                                </li>
+                            </ul>
+                        </li>
 
 
                         @can('انبار','نوع انبار')
@@ -156,38 +167,40 @@
                         @endcan
 
 
-
-                            <li class="treeview" id="basic_li_material_transaction_all">
-                                <a href="#"><i class="fa fa-circle-o"></i>تعاریف تراکنش
-                                    <span class="pull-left-container">
+                        <li class="treeview" id="basic_li_material_transaction_all">
+                            <a href="#"><i class="fa fa-circle-o"></i>تعاریف تراکنش
+                                <span class="pull-left-container">
                   <i class="fa fa-angle-right pull-left"></i>
                 </span>
-                                </a>
-                                <ul class="treeview-menu">
-                                    <li id="basic_li_material_inventory_transaction_type">
-                                        <a href="{{route('material_inventory_transaction_type')}}"><i class="fa fa-circle-o"></i>انواع تراکنش انبار مواد اولیه
-                                        </a>
-                                    </li>
-                                    <li id="basic_li_product_inventory_transaction_type">
-                                        <a href="{{route('product_inventory_transaction_type')}}"><i class="fa fa-circle-o"></i>انواع تراکنش انبار محصول
-                                        </a>
-                                    </li>
-                                    <li id="basic_li_label_inventory_transaction_type">
-                                        <a href="{{route('label_inventory_transaction_type')}}"><i class="fa fa-circle-o"></i>انواع تراکنش انبار لیبل
-                                        </a>
-                                    </li>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="basic_li_material_inventory_transaction_type">
+                                    <a href="{{route('material_inventory_transaction_type')}}"><i
+                                            class="fa fa-circle-o"></i>انواع تراکنش انبار مواد اولیه
+                                    </a>
+                                </li>
+                                <li id="basic_li_product_inventory_transaction_type">
+                                    <a href="{{route('product_inventory_transaction_type')}}"><i
+                                            class="fa fa-circle-o"></i>انواع تراکنش انبار محصول
+                                    </a>
+                                </li>
+                                <li id="basic_li_label_inventory_transaction_type">
+                                    <a href="{{route('label_inventory_transaction_type')}}"><i
+                                            class="fa fa-circle-o"></i>انواع تراکنش انبار لیبل
+                                    </a>
+                                </li>
 
-                                    <li id="basic_li_stores_type">
-                                        <a href="#"><i class="fa fa-circle-o"></i>انواع تراکنش انبار ملزومات
-                                        </a>
-                                    </li>
-                                    <li id="basic_li_stores_type">
-                                        <a href="#"><i class="fa fa-circle-o"></i>انواع تراکنش انبار مستربچ
-                                        </a>
-                                    </li>
+                                <li id="basic_li_stores_type">
+                                    <a href="#"><i class="fa fa-circle-o"></i>انواع تراکنش انبار ملزومات
+                                    </a>
+                                </li>
+                                <li id="basic_li_stores_type">
+                                    <a href="#"><i class="fa fa-circle-o"></i>انواع تراکنش انبار مستربچ
+                                    </a>
+                                </li>
 
-                                </ul>
-                            </li>
+                            </ul>
+                        </li>
 
 
                         @can('رنگ','مستربچ','رنگ و مستربچ','مواد','گرید مواد','پتروشیمی','درجه کیفی مواد','مواد اولیه')

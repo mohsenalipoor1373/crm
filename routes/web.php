@@ -397,6 +397,32 @@ Route::middleware('auth')->prefix('label_type')->group(function () {
     Route::get('remove_label_type', [\App\Http\Controllers\BackEnd\LabelType\LabelTypeController::class, 'remove_label_type'])->name('remove_label_type');
 });
 
+Route::middleware('auth')->prefix('label_design')->group(function () {
+    Route::get('/', [\App\Http\Controllers\BackEnd\LabelDesign\LabelDesignController::class, 'index'])->name('label_design');
+    Route::post('post_data_label_design', [\App\Http\Controllers\BackEnd\LabelDesign\LabelDesignController::class, 'post_data_label_design'])->name('post_data_label_design');
+    Route::post('post_data_edit_label_design', [\App\Http\Controllers\BackEnd\LabelDesign\LabelDesignController::class, 'post_data_edit_label_design'])->name('post_data_edit_label_design');
+    Route::get('edit_label_design', [\App\Http\Controllers\BackEnd\LabelDesign\LabelDesignController::class, 'edit_label_design'])->name('edit_label_design');
+    Route::get('remove_label_design', [\App\Http\Controllers\BackEnd\LabelDesign\LabelDesignController::class, 'remove_label_design'])->name('remove_label_design');
+});
+
+Route::middleware('auth')->prefix('label_design_version')->group(function () {
+    Route::get('/', [\App\Http\Controllers\BackEnd\LabelDesignVersions\LabelDesignVersionsController::class, 'index'])->name('label_design_version');
+    Route::post('post_data_label_design_version', [\App\Http\Controllers\BackEnd\LabelDesignVersions\LabelDesignVersionsController::class, 'post_data_label_design_version'])->name('post_data_label_design_version');
+    Route::post('post_data_edit_label_design_version', [\App\Http\Controllers\BackEnd\LabelDesignVersions\LabelDesignVersionsController::class, 'post_data_edit_label_design_version'])->name('post_data_edit_label_design_version');
+    Route::get('edit_label_design_version', [\App\Http\Controllers\BackEnd\LabelDesignVersions\LabelDesignVersionsController::class, 'edit_label_design_version'])->name('edit_label_design_version');
+    Route::get('see_file_label_design_version', [\App\Http\Controllers\BackEnd\LabelDesignVersions\LabelDesignVersionsController::class, 'see_file_label_design_version'])->name('see_file_label_design_version');
+    Route::get('remove_label_design_version', [\App\Http\Controllers\BackEnd\LabelDesignVersions\LabelDesignVersionsController::class, 'remove_label_design_version'])->name('remove_label_design_version');
+});
+
+Route::middleware('auth')->prefix('product_label')->group(function () {
+    Route::get('/', [\App\Http\Controllers\BackEnd\ProductLabel\ProductLabelController::class, 'index'])->name('product_label');
+    Route::post('post_data_product_label', [\App\Http\Controllers\BackEnd\ProductLabel\ProductLabelController::class, 'post_data_product_label'])->name('post_data_product_label');
+    Route::post('post_data_edit_product_label', [\App\Http\Controllers\BackEnd\ProductLabel\ProductLabelController::class, 'post_data_edit_product_label'])->name('post_data_edit_product_label');
+    Route::get('edit_product_label', [\App\Http\Controllers\BackEnd\ProductLabel\ProductLabelController::class, 'edit_product_label'])->name('edit_product_label');
+    Route::get('remove_product_label', [\App\Http\Controllers\BackEnd\ProductLabel\ProductLabelController::class, 'remove_product_label'])->name('remove_product_label');
+    Route::get('change_product_label', [\App\Http\Controllers\BackEnd\ProductLabel\ProductLabelController::class, 'change_product_label'])->name('change_product_label');
+});
+
 
 
 

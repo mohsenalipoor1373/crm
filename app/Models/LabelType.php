@@ -15,4 +15,8 @@ class LabelType extends Model
 
     protected $guarded = ['id'];
     protected $table = 'label_types';
+    public function label_design()
+    {
+        return $this->hasMany(LabelDesign::class);
+    }
 }

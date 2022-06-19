@@ -65,4 +65,9 @@ class User extends Authenticatable
         return $this->hasMany(Customers::class);
     }
 
+    public function label_design_versions()
+    {
+        return $this->hasMany(LabelDesignVersions::class);
+    }
+
 }
